@@ -1,6 +1,0 @@
-*.pyc
-*.pyo
-*.db
-*.db.backup
-*.sublime-workspace
-venv/*

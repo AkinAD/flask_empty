@@ -1,8 +1,30 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/core.css' ) }}">
-</head>
-    {% block layout %}{% endblock %}
+    <head>
+        {% if title %}
+        <title>{{ title }} - *FILl THIS IN*</title>
+        {% else %}
+        <title>*FILl THIS IN*</title>
+        {% endif %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css' ) }}">
+
+    </head>
+    <body>
+        <div>
+            NAVIGATION:
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('something') }}">something</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
 </html>
