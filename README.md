@@ -1,4 +1,4 @@
-flask-empty
+flask_empty
 ===========
 
 This is my template file for new flask projects
